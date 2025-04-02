@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Anil</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: "Courier New", Courier, monospace;
+            text-align: center;
+            margin: 0;
+        }
+        
+
+
+        .h1 {
+            display: grid;
+            grid-template-rows: 20% 80%;
+            height: 100vh;
+            background-color: rgb(10, 10, 9);
+            gap: 20px; /* Adds space between the rows */
+        }.hr{
+             border: 0; /* Removes the default border */
+            height: 2px; /* Sets the height of the line */
+            background-color: #00ff00; /* Sets the color of the line */
+            width: 100%; /* Adjusts the width of the line */
+            margin: 20px auto;
+            
+        }
+
+        .terminal {
+            border: 2px solid #00ff00;
+            padding: 20px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        .input-box {
+            width: 90%;
+            background-color: black;
+            color: #00ff00;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="h1">
+        <!-- Frame for the heading -->
+        <div style="height: 20%;">
+            <h1>Hacker_anil.com</h1>
+            <hr class="hr">
+        </div>
+        <!-- Frame for the content -->
+        <div style="height: 80%; padding-top: 20px;">
+            <div class="terminal">
+                <p>Uncover the truth...</p>
+                <input type="text" id="userInput" class="input-box" placeholder="Type your answer and press Enter" onkeydown="checkAnswer(event)">
+                <div id="output"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(event) {
+            if (event.key === "Enter") {
+                var input = document.getElementById("userInput").value.toLowerCase();
+                var outputDiv = document.getElementById("output");
+
+                // Checking the first set of answers
+                if (input === "current location") {
+                    outputDiv.innerHTML = "<p>10.7776164, 78.6955880, Dept of Remote Sensing, BDU</p>";
+                }
+                // Checking the second set of answers
+                else if (input === "personal information") {
+                    outputDiv.innerHTML = "<p>Name: <br> Age:20 <br> DOB:01/03/2005 <br> Adhar No: 69420?????</p>";
+                }
+                // Checking the third set of answers
+                else if (input === "skills") {
+                    outputDiv.innerHTML = "<p>:( </p>";
+                }
+                else {
+                    outputDiv.innerHTML = "<p>Incorrect. Try again.</p>";
+                }
+
+                // Clear input field
+                document.getElementById("userInput").value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
